@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: background 0.5s, color 0.5s;
+    }
+    header {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover { color: #00adb5; }
+    #theme-toggle {
+      background: #00adb5;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .card {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.7);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0px 8px 15px rgba(0,0,0,0.9);
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #00adb5;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .card a:hover {
+      background: #008c9e;
+    }
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    /* Light Theme */
+    body.light-theme {
+      background: #f9f9f9;
+      color: #333;
+    }
+    body.light-theme header, 
+    body.light-theme footer {
+      background: #ddd;
+      color: #000;
+    }
+    body.light-theme .card {
+      background: #fff;
+      color: #000;
+    }
+    body.light-theme .card a {
+      background: #333;
+      color: #fff;
+    }
+    body.light-theme .card a:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Projects</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="certificates.html">Certificates</a>
+    </nav>
+    <button id="theme-toggle">🌙 Dark Mode</button>
+  </header>
+
+  <section>
+    <div class="projects">
+      <div class="card reveal">
+        <h3>CardioRisk</h3>
+        <p>A machine learning model that predicts whether a patient is at risk of heart disease using clinical data, 
+           evaluated with performance metrics and visualizations.</p>
+        <a href="projects/CardioRisk  (Azure project).pdf" target="_blank">📄 View PDF</a>
+      </div>
+
+      <div class="card reveal">
+        <h3>Real-Time 5G Traffic Load Balancer Simulator</h3>
+        <p>An interactive 5G Traffic Load Dashboard using JavaFX that reads 
+           traffic data from CSV files and visualizes network load trends through multiple charts 
+           (Line, Bar, Pie, Scatter) for real-time-like simulation.</p>
+        <a href="projects/CN final mini project.pdf" target="_blank">📄 View PDF</a>
+      </div>
+
+      <div class="card reveal">
+        <h3>Trie Implementation for Fast Dictionary Lookup</h3>
+        <p>A dictionary lookup system using a Trie in C. Supports insert, search, delete, 
+           and prefix-check operations efficiently with O(n) average complexity.</p>
+        <a href="projects/DAA mini project.pdf" target="_blank">📄 View PDF</a>
+      </div>
+
+      <div class="card reveal">
+        <h3>Hashtag Trends Over Time on Twitter</h3>
+        <p>Analyzes hashtag trends using Twitter API/historical dataset, 
+           aggregating frequencies and visualizing temporal patterns with Python and Matplotlib/Plotly.</p>
+        <a href="projects/dev MINI PROJECT.pdf" target="_blank">📄 View PDF</a>
+      </div>
+
+      <div class="card reveal">
+        <h3>Pothole Detection using Drone/Street Images</h3>
+        <p>An automated system using drone/street imagery and computer vision 
+           to detect, classify, and map potholes for road safety at scale.</p>
+        <a href="projects/dlt mini project .pdf" target="_blank">📄 View PDF</a>
+      </div>
+
+      <div class="card reveal">
+        <h3>Predictive Analytics for Cloud Storage Failure</h3>
+        <p>A predictive analytics model that uses historical cloud data 
+           and ML algorithms to forecast potential storage failures.</p>
+        <a href="projects/mlt mini project .pdf" target="_blank">📄 View PDF</a>
+      </div>
+
+      <div class="card reveal">
+        <h3>Cafe Management System</h3>
+        <p>A console-based Java & MySQL project that allows customers to view menu, 
+           place orders, calculate bills, and store order details in a database.</p>
+        <a href="projects/oop project 1.pdf" target="_blank">📄 View PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 My Portfolio | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Dark/Light Mode Toggle
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-theme");
+      toggleBtn.textContent =
+        document.body.classList.contains("light-theme") ? "🌙 Dark Mode" : "☀️ Light Mode";
+    });
+
+    // Scroll Reveal Animation
+    function revealOnScroll() {
+      document.querySelectorAll(".reveal").forEach(el => {
+        let windowHeight = window.innerHeight;
+        let elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    }
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | My Portfolio</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: background 0.5s, color 0.5s;
+    }
+    header, footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover { color: #00adb5; }
+    #theme-toggle {
+      background: #00adb5;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+    /* Light Theme */
+    body.light-theme {
+      background: #f9f9f9;
+      color: #333;
+    }
+    body.light-theme header,
+    body.light-theme footer {
+      background: #ddd;
+      color: #000;
+    }
+    body.light-theme nav a {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="certificates.html">Certificates</a>
+    </nav>
+    <button id="theme-toggle">🌙 Dark Mode</button>
+  </header>
+
+  <main style="padding:40px; text-align:center;">
+    <h2>Hello, I'm Kathyaeini 👋</h2>
+    <p>This is my portfolio showcasing my skills, projects, and achievements.</p>
+  </main>
+
+  <footer>
+    <p>© 2025 My Portfolio | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-theme");
+      toggleBtn.textContent =
+        document.body.classList.contains("light-theme")
+          ? "🌙 Dark Mode"
+          : "☀️ Light Mode";
+      localStorage.setItem("theme", document.body.classList.contains("light-theme") ? "light" : "dark");
+    });
+    window.onload = () => {
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-theme");
+        toggleBtn.textContent = "🌙 Dark Mode";
+      }
+    };
+  </script>
+</body>
+</html>
